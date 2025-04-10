@@ -7,56 +7,14 @@ import { ScaleIcon as ScaleOutline } from '@heroicons/react/outline';
 
 // import footbolka from '../assets/footbolka.png';
 
-export default function Main({ onAddToCart, onToggleFavorite, favorites, scale, onScale }) {
-    const products = [
-        {
-            id: 1,
-            title: 'Футболка Oversize',
-            description: 'Описание товара',
-            image: '/images/footbolka.png',
-            price: 1290,
-        },
-        {
-            id: 2,
-            title: 'Футболка Oversize',
-            description: 'Описание товара',
-            image: '/images/footbolka2.png',
-            price: 2290,
-        },
-        {
-            id: 3,
-            title: 'Футболка Oversize',
-            description: 'Описание товара',
-            image: '/images/footbolka3.png',
-            price: 4990,
-        },
-        {
-            id: 4,
-            title: 'Футболка Oversize',
-            description: 'Описание товара',
-            image: '/images/footbolka4.png',
-            price: 4990,
-        },
-        {
-            id: 5,
-            title: 'Футболка Oversize',
-            description: 'Описание товара',
-            image: '/images/footbolka5.png',
-            price: 4990,
-        },
-        {
-            id: 6,
-            title: 'Футболка Oversize',
-            description: 'Описание товара',
-            image: '/images/footbolka6.png',
-            price: 4990,
-        },
-    ];
+export default function Main({ onAddToCart, onToggleFavorite, favorites, scale, onScale, products, onDecrement, onIncrement }) {
+
+
     return (
         <>
             <div className='grid grid-cols-3 gap-10 mt-10 '>
                 {products.map((product) => (
-                    <div key={product.id} className='shadow rounded-xl p-4 text-left relative bg-white  hover:shadow-lg transition-shadow duration-200 '>
+                    <div key={product.id} className='shadow rounded-xl p-4 text-left relative bg-white  hover:shadow-lg transition-shadow duration-200'>
 
                         <div className='relative'>
                             <img className='w-full' src={product.image} alt={product.title} />
@@ -82,9 +40,35 @@ export default function Main({ onAddToCart, onToggleFavorite, favorites, scale, 
                         <p className='text-gray-500'>{product.description}</p>
                         <p>{product.price} ₽</p>
 
-                        <button onClick={onAddToCart}
+
+
+                        {/* {!product.cart ? <button onClick={() => onAddToCart(product)}
                             className='right-5 bottom-5 absolute mt-4 items-end bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition hover:scale-105 hover:-translate-y-1 duration-300'>
-                            +</button>
+                            +</button> : <div> - | +</div>} */}
+
+                        {!product.cart ? (
+                            <button
+                                onClick={() => onAddToCart(product)}
+                                className="right-5 bottom-5 absolute mt-4 items-end bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition hover:scale-105 hover:-translate-y-1 duration-300">
+                                +
+                            </button>
+                        ) : (
+                            <div className="flex items-center gap-2 absolute bottom-5 right-5">
+                                <button
+                                    onClick={() => onDecrement(product.id)}
+                                    className="bg-red-500 text-white w-8 h-8 rounded-full hover:bg-red-600 transition">
+                                    -
+                                </button>
+                                <span className="text-lg">{product.cart}</span>
+                                <button
+                                    onClick={() => onIncrement(product.id)
+                                    }
+                                    className="bg-green-500 text-white w-8 h-8 rounded-full hover:bg-green-600 transition">
+                                    +
+                                </button>
+                            </div>
+                        )}
+
 
 
 

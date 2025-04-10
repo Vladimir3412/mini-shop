@@ -7,9 +7,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        // "Montserrat Alternates", sans- serif;
-      }
+        montserrat: ['"Montserrat Alternates"', 'sans-serif'],
+      },
     },
   },
+
   plugins: [],
 }
