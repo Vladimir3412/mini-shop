@@ -1,12 +1,24 @@
- React + Vite
+# Мини интернет-магазин одежды
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Небольшой проект интернет-магазина на базе React и Tailwind CSS.
 
-Currently, two official plugins are available:
+## ⚙️ Функционал:
+- Отображение списка товаров
+- Добавление товаров в корзину
+- Счётчик количества товаров в корзине
+- Выпадающее окно корзины при наведении
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Стек технологий:
+- React
+- Tailwind CSS
+- JavaScript (основная логика)
+- Git / GitHub для контроля версий
 
-## Expanding the ESLint configuration
+## 📦 Как запустить проект локально:
+1. Склонировать репозиторий
+2. Установить зависимости: `npm install`
+3. Запустить проект: `npm run dev`
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+
